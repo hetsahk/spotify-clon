@@ -8,91 +8,202 @@
 
   <section class="mb-12">
     <h2 class="mb-4 text-xl font-semibold">Square cards</h2>
-    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-      <app-card
-        variant="square"
-        title="Maria Becerra"
-        subtitle="With TINI, TULI..."
-        imageUrl="https://picsum.photos/seed/maria/300"
-      />
-      <app-card
-        variant="square"
-        title="Top 50 Argentina"
-        subtitle="Los hits más escuchados"
-        imageUrl="https://picsum.photos/seed/top50ar/300"
-      />
-      <app-card
-        variant="square"
-        title="Cumbia 420"
-        subtitle="L-Gante, Damas Gratis..."
-        imageUrl="https://picsum.photos/seed/cumbia/300"
-      />
-      <app-card
-        variant="square"
-        title="Rock Nacional"
-        subtitle="Soda, Los Redondos..."
-        imageUrl="https://picsum.photos/seed/rocknac/300"
-      />
+    <div class="overflow-x-auto no-scrollbar">
+      <ul class="flex items-center gap-8">
+        @for (item of squareCards; track item.title) {
+          <li>
+            <app-card
+              variant="square"
+              [title]="item.title"
+              [subtitle]="item.subtitle"
+              [imageUrl]="item.imageUrl"
+            />
+          </li>
+        }
+      </ul>
     </div>
   </section>
 
   <section class="mb-12">
     <h2 class="mb-4 text-xl font-semibold">Circle cards</h2>
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-      <app-card
-        variant="circle"
-        title="Bad Bunny"
-        subtitle="Artist"
-        imageUrl="https://picsum.photos/seed/badbunny/300"
-      />
-      <app-card
-        variant="circle"
-        title="Duki"
-        subtitle="Artist"
-        imageUrl="https://picsum.photos/seed/duki/300"
-      />
-      <app-card
-        variant="circle"
-        title="Nathy Peluso"
-        subtitle="Artist"
-        imageUrl="https://picsum.photos/seed/nathy/300"
-      />
-      <app-card
-        variant="circle"
-        title="Rosalia"
-        subtitle="Artist"
-        imageUrl="https://picsum.photos/seed/rosalia/300"
-      />
+      @for (item of circleCards; track item.title) {
+        <app-card
+          variant="circle"
+          [title]="item.title"
+          [subtitle]="item.subtitle"
+          [imageUrl]="item.imageUrl"
+        />
+      }
     </div>
   </section>
 
   <section>
     <h2 class="mb-4 text-xl font-semibold">Horizontal cards</h2>
     <div class="flex max-w-sm flex-col gap-1">
-      <app-card
-        variant="horizontal"
-        title="Liked Songs"
-        subtitle="Playlist • 297 songs"
-        imageUrl="https://picsum.photos/seed/liked/100"
-      />
-      <app-card
-        variant="horizontal"
-        title="Discover Weekly"
-        subtitle="Playlist • Spotify"
-        imageUrl="https://picsum.photos/seed/discover/100"
-      />
-      <app-card
-        variant="horizontal"
-        title="Daily Mix 1"
-        subtitle="Playlist • Made for you"
-        imageUrl="https://picsum.photos/seed/daily1/100"
-      />
-      <app-card
-        variant="horizontal"
-        title="Release Radar"
-        subtitle="Playlist • Spotify"
-        imageUrl="https://picsum.photos/seed/radar/100"
-      />
+      @for (item of horizontalCards; track item.title) {
+        <app-card
+          variant="horizontal"
+          [title]="item.title"
+          [subtitle]="item.subtitle"
+          [imageUrl]="item.imageUrl"
+        />
+      }
+    </div>
+  </section>
+
+  <hr class="my-12 border-neutral-800" />
+
+  <header class="mb-10">
+    <h1 class="text-3xl font-bold">Spotify Logo</h1>
+    <p class="mt-2 text-sm text-neutral-400">
+      Componente <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">app-spotify-logo</code>:
+      SVG inline que hereda tamaño (<code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">font-size</code>)
+      y color (<code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">currentColor</code>) del parent.
+    </p>
+  </header>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-xl font-semibold">Tamaños</h2>
+    <div class="flex items-end gap-6 text-white">
+      <app-spotify-logo class="text-2xl" />
+      <app-spotify-logo class="text-4xl" />
+      <app-spotify-logo class="text-6xl" />
+      <app-spotify-logo class="text-8xl" />
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-xl font-semibold">Colores</h2>
+    <div class="flex items-center gap-6">
+      <app-spotify-logo class="text-5xl text-white" />
+      <app-spotify-logo class="text-5xl text-[#1DB954]" />
+      <app-spotify-logo class="text-5xl text-black" />
+      <app-spotify-logo class="text-5xl text-neutral-500" />
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-4 text-xl font-semibold">Caso real: botón con hover</h2>
+    <div class="flex items-center gap-4">
+      <button
+        class="flex items-center gap-2 rounded-full bg-[#1DB954] px-6 py-3 font-semibold text-black transition-transform hover:scale-105"
+      >
+        <app-spotify-logo class="text-xl" />
+        <span>Escuchar en Spotify</span>
+      </button>
+
+      <a
+        href="#"
+        class="flex items-center gap-2 text-neutral-400 transition-colors hover:text-[#1DB954]"
+      >
+        <app-spotify-logo class="text-2xl" />
+        <span class="text-sm font-medium">Abrir app</span>
+      </a>
+    </div>
+  </section>
+
+  <hr class="my-12 border-neutral-800" />
+
+  <header class="mb-10">
+    <h1 class="text-3xl font-bold">ng-icons — Solar Icons</h1>
+    <p class="mt-2 text-sm text-neutral-400">
+      Uso de @ng-icons/solar-icons: variantes, tamaños, colores y casos reales.
+    </p>
+  </header>
+
+  <section class="mb-12">
+    <h2 class="mb-1 text-xl font-semibold">1. Mismo ícono, 6 variantes</h2>
+    <p class="mb-4 text-sm text-neutral-400">
+      Cada ícono de Solar viene en 6 estilos. Cambia el grosor/relleno, no el diseño base.
+    </p>
+    <ul class="flex flex-wrap items-end gap-6">
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeartLinear" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Linear</span>
+      </li>
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeartBold" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Bold</span>
+      </li>
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeartBroken" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Broken</span>
+      </li>
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeartDuotone" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Line Duotone</span>
+      </li>
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeartBoldDuotone" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Bold Duotone</span>
+      </li>
+      <li class="flex flex-col items-center gap-2">
+        <ng-icon name="solarHeart" class="text-4xl" />
+        <span class="text-xs text-neutral-400">Outline</span>
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-1 text-xl font-semibold">2. Tamaños (controlados con font-size)</h2>
+    <p class="mb-4 text-sm text-neutral-400">
+      El tamaño se hereda de <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">font-size</code>.
+      Usamos utilities de Tailwind: <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">text-xl</code>,
+      <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">text-4xl</code>, etc.
+    </p>
+    <div class="flex items-end gap-6">
+      <ng-icon name="solarPlayCircleBold" class="text-xl" />
+      <ng-icon name="solarPlayCircleBold" class="text-3xl" />
+      <ng-icon name="solarPlayCircleBold" class="text-5xl" />
+      <ng-icon name="solarPlayCircleBold" class="text-7xl" />
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="mb-1 text-xl font-semibold">3. Colores (heredan del color del texto)</h2>
+    <p class="mb-4 text-sm text-neutral-400">
+      El SVG usa <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">currentColor</code>,
+      así que el ícono pinta con lo que pongas en <code class="rounded bg-neutral-800 px-1 py-0.5 text-xs">text-*</code>.
+    </p>
+    <div class="flex items-center gap-6">
+      <ng-icon name="solarHeartBold" class="text-4xl text-white" />
+      <ng-icon name="solarHeartBold" class="text-4xl text-green-500" />
+      <ng-icon name="solarHeartBold" class="text-4xl text-red-500" />
+      <ng-icon name="solarHeartBold" class="text-4xl text-yellow-400" />
+      <ng-icon name="solarHeartBold" class="text-4xl text-sky-400" />
+    </div>
+  </section>
+
+  <section>
+    <h2 class="mb-1 text-xl font-semibold">4. Caso real: controles de reproductor</h2>
+    <p class="mb-4 text-sm text-neutral-400">
+      Íconos como parte de botones reales, con estados hover.
+    </p>
+    <div class="flex items-center gap-4 rounded-lg bg-neutral-900 p-4">
+      <button class="text-neutral-400 transition-colors hover:text-white" aria-label="Shuffle">
+        <ng-icon name="solarShuffleBold" class="text-2xl" />
+      </button>
+      <button class="text-neutral-400 transition-colors hover:text-white" aria-label="Anterior">
+        <ng-icon name="solarSkipPreviousBold" class="text-2xl" />
+      </button>
+      <button
+        class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-black transition-transform hover:scale-105"
+        aria-label="Play"
+      >
+        <ng-icon name="solarPlayBold" class="text-2xl" />
+      </button>
+      <button class="text-neutral-400 transition-colors hover:text-white" aria-label="Siguiente">
+        <ng-icon name="solarSkipNextBold" class="text-2xl" />
+      </button>
+      <button class="text-neutral-400 transition-colors hover:text-white" aria-label="Repeat">
+        <ng-icon name="solarRepeatBold" class="text-2xl" />
+      </button>
+
+      <div class="ml-auto flex items-center gap-3 text-neutral-400">
+        <ng-icon name="solarVolumeLoudBold" class="text-xl" />
+        <ng-icon name="solarHeartLinear" class="text-xl transition-colors hover:text-red-500" />
+      </div>
     </div>
   </section>
 </main>
