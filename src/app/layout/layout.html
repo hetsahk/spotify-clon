@@ -1,24 +1,63 @@
-<body class="pt-[88px] pb-[64px] bg-black">
-  <header class="fixed top-0 left-0 w-full h-[88px]"></header>
-  <div class="flex gap-8 px-8 h-[calc(100vh-88px-64px)]">
-    <aside class="rounded-lg bg-[#121212] overflow-y-auto no-scrollbar p-8">
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
-      <h1 class="text-7xl text-white">Playlist</h1>
+<body class="pt-[64px] pb-[88px] bg-black">
+  <header class="flex justify-between fixed top-0 left-0 w-full h-[64px] p-2 items-center">
+    <a href="#" class="ml-5">
+        <app-spotify-logo class="text-4xl text-white" />
+    </a>
+
+    <div class="absolute flex gap-2 left-[50%] -translate-x-1/2">
+        <button class="size-12 text-white bg-[#1f1f1f] transition duration-300 hover:bg-[#292929] hover:scale-105 rounded-full grid place-items-center cursor-pointer">
+            <ng-icon name="solarHomeBold" class="text-2xl"/>
+        </button>
+        <form role="search" class="relative flex w-[475px] rounded-full text-[#999999] bg-[#1f1f1f]  font-medium outline-transparent transition duration-500 ease-in-out hover:bg-[#292929] hover:outline hover:outline-[#404040] hover:text-white">
+            <ng-icon name="solarMagniferLinear" class="absolute top-[50%] -translate-y-1/2 left-2.5 text-2xl transition hover:scale-105 cursor-pointer"/>
+            <input type="search" placeholder="¿Qué quieres reproducir?" class="pl-12.5 pr-22.5 rounded-full [&::-webkit-search-cancel-button]:hidden">
+            <div class="absolute top-[50%] -translate-y-1/2 right-12.5 w-[0.5px] h-7 bg-[#999999]"></div>
+            <button class="text-[#999999] transition duration-500 hover:text-white cursor-pointer">
+              <ng-icon name="solarLibraryLinear" class="absolute top-[50%] -translate-y-1/2 right-3 text-2xl hover:scale-105"/>
+            </button>
+        </form>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <button class="rounded-full h-8 px-4.5 bg-white text-sm font-medium transition hover:scale-105 cursor-pointer">
+            Explorar Premium
+        </button>
+
+        <button class="flex items-center pl-4 pr-6  gap-2 text-[#999999] transition hover:scale-105 hover:text-white cursor-pointer">
+            <ng-icon name="solarRoundArrowDownLinear" class="text-xl"/>
+            <span class="text-sm font-medium">Instalar aplicación</span>
+        </button>
+
+        <button class="size-8 text-[#999999] grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarBellLinear" class="text-xl"/>
+        </button>
+
+        <button class="size-8 text-[#999999] grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarUsersGroupTwoRoundedLinear" class="text-xl"/>
+        </button>
+
+        <button class="size-12 bg-[#1f1f1f] rounded-full grid place-items-center transition duration-300 ease-in-out hover:bg-[#282828] hover:scale-105 cursor-pointer">
+            <img src="https://images.unsplash.com/photo-1776345021290-cdf1099204ca?q=80&w=889&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            class="size-8 rounded-full object-cover"/>
+        </button>
+    </div>
+  </header>
+  <div class="flex gap-2 px-2 h-[calc(100vh-64px-88px)]">
+    <aside class="w-[420px] rounded-lg bg-[#121212] overflow-y-auto no-scrollbar p-8">
+      <header>
+        <div>
+            <h2 >Tu biblioteca</h2>
+            <div class="text-white">
+                <button>
+                    <ng-icon name="solarAddCircleLinear" class="text-2xl"/>
+                </button>
+                <button>
+                    <ng-icon name="solarMaximizeLinear" class="text-2xl" />
+                </button>
+            </div>
+        </div>
+      </header>
+      <div></div>
     </aside>
     <main class="flex-1 rounded-lg bg-[#1F1F1F] overflow-y-auto no-scrollbar p-8">
       <div class="h-68 w-68 bg-black">Soy una caja</div>
@@ -30,5 +69,5 @@
       <div class="h-68 w-68 bg-black">Soy una caja</div>
     </main>
   </div>
-  <footer class="fixed bottom-0 left-0 w-full h-[64px]"></footer>
+  <footer class="fixed bottom-0 left-0 w-full h-[88px]"></footer>
 </body>
