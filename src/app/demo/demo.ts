@@ -117,5 +117,6 @@ export class Demo {
       subtitle: 'Playlist • Spotify',
       imageUrl: 'https://picsum.photos/seed/radar/100',
     },
+    
   ];
 }

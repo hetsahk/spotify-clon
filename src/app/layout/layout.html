@@ -19,12 +19,12 @@
     </div>
 
     <div class="flex items-center gap-2">
-        <button class="rounded-full h-8 px-4.5 bg-white text-sm font-medium transition hover:scale-105 cursor-pointer">
+        <button class="rounded-full h-8 px-4 bg-white text-sm font-medium transition hover:scale-105 cursor-pointer">
             Explorar Premium
         </button>
 
-        <button class="flex items-center pl-4 pr-6  gap-2 text-[#999999] transition hover:scale-105 hover:text-white cursor-pointer">
-            <ng-icon name="solarRoundArrowDownLinear" class="text-xl"/>
+        <button class="flex items-center pl-3 pr-6  gap-2 text-[#999999] transition hover:scale-105 hover:text-white cursor-pointer">
+            <ng-icon name="solarRoundArrowDownLinear" class="text-lg"/>
             <span class="text-sm font-medium">Instalar aplicación</span>
         </button>
 
@@ -36,28 +36,57 @@
             <ng-icon name="solarUsersGroupTwoRoundedLinear" class="text-xl"/>
         </button>
 
-        <button class="size-12 bg-[#1f1f1f] rounded-full grid place-items-center transition duration-300 ease-in-out hover:bg-[#282828] hover:scale-105 cursor-pointer">
+        <button class="size-12 bg-[#1f1f1f] rounded-full grid place-items-center transition duration-300 ease-in-out hover:bg-[#292929] hover:scale-105 cursor-pointer">
             <img src="https://images.unsplash.com/photo-1776345021290-cdf1099204ca?q=80&w=889&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             class="size-8 rounded-full object-cover"/>
         </button>
     </div>
   </header>
   <div class="flex gap-2 px-2 h-[calc(100vh-64px-88px)]">
-    <aside class="w-[420px] rounded-lg bg-[#121212] overflow-y-auto no-scrollbar p-8">
-      <header>
-        <div>
-            <h2 >Tu biblioteca</h2>
-            <div class="text-white">
-                <button>
-                    <ng-icon name="solarAddCircleLinear" class="text-2xl"/>
+    <aside class="flex flex-col w-[420px] rounded-lg bg-[#121212] p-4 pb-0">
+      <header class="mb-2">
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="font-medium text-[#F9F9F9] cursor-pointer">Tu biblioteca</h2>
+            <div class="flex items-center gap-2">
+                <button class="flex gap-2 px-4 py-2 rounded-full items-center text-[#999999] bg-[#1f1f1f] transition duration-300 ease-in hover:bg-[#292929] hover:text-white">
+                    <ng-icon name="solarAddCircleLinear" class="text-xl"/>
+                    <span class="text-sm font-medium text-white">Crear</span>
                 </button>
-                <button>
-                    <ng-icon name="solarMaximizeLinear" class="text-2xl" />
+                <button class="size-9 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#1f1f1f]">
+                    <ng-icon name="solarMaximizeLinear" class="text-base" />
                 </button>
             </div>
         </div>
+
+        <div class="relative flex gap-2 overflow-x-auto no-scrollbar">
+            <div class="absolute right-0 top-0 h-full w-30 bg-linear-to-l from-[#121212] to-transparent pointer-events-none"></div>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Playlists</button>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Artistas</button>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Álbumes</button>
+            <button class="px-3 py-1.5 rounded-full text-sm whitespace-nowrap bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Podcast y programas</button>
+        </div>
       </header>
-      <div></div>
+      <div class="overflow-y-auto no-scrollbar">
+        <div class="flex justify-between mb-3">
+            <button class="size-8 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#2A2A2A] hover:text-white">
+                <ng-icon name="solarMagniferLinear" class=""/>
+            </button>
+            <button class="flex gap-2 items-center text-[#999999] transition hover:scale-105 hover:text-[#f9f9f9]">
+                <span class="text-sm font-medium">Recientes</span>
+                <ng-icon name="solarList1Linear" class="text-xl"/>
+            </button>
+        </div>
+        <div class="flex flex-col gap-1">
+        @for (item of horizontalCards; track item.title) {
+                <app-card
+                variant="horizontal"
+                [title]="item.title"
+                [subtitle]="item.subtitle"
+                [imageUrl]="item.imageUrl"
+                />
+            }
+        </div>
+      </div>
     </aside>
     <main class="flex-1 rounded-lg bg-[#1F1F1F] overflow-y-auto no-scrollbar p-8">
       <div class="h-68 w-68 bg-black">Soy una caja</div>
