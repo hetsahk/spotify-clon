@@ -48,11 +48,11 @@
         <div class="flex items-center justify-between mb-4">
             <h2 class="font-medium text-[#F9F9F9] cursor-pointer">Tu biblioteca</h2>
             <div class="flex items-center gap-2">
-                <button class="flex gap-2 px-4 py-2 rounded-full items-center text-[#999999] bg-[#1f1f1f] transition duration-300 ease-in hover:bg-[#292929] hover:text-white">
+                <button class="flex gap-2 px-4 py-2 rounded-full items-center text-[#999999] bg-[#1f1f1f] transition duration-300 ease-in hover:bg-[#292929] hover:text-white cursor-pointer">
                     <ng-icon name="solarAddCircleLinear" class="text-xl"/>
                     <span class="text-sm font-medium text-white">Crear</span>
                 </button>
-                <button class="size-9 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#1f1f1f]">
+                <button class="size-9 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#1f1f1f] cursor-pointer">
                     <ng-icon name="solarMaximizeLinear" class="text-base" />
                 </button>
             </div>
@@ -60,18 +60,18 @@
 
         <div class="relative flex gap-2 overflow-x-auto no-scrollbar">
             <div class="absolute right-0 top-0 h-full w-30 bg-linear-to-l from-[#121212] to-transparent pointer-events-none"></div>
-            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Playlists</button>
-            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Artistas</button>
-            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Álbumes</button>
-            <button class="px-3 py-1.5 rounded-full text-sm whitespace-nowrap bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333]">Podcast y programas</button>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333] cursor-pointer">Playlists</button>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333] cursor-pointer">Artistas</button>
+            <button class="px-3 py-1.5 rounded-full text-sm bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333] cursor-pointer">Álbumes</button>
+            <button class="px-3 py-1.5 rounded-full text-sm whitespace-nowrap bg-[#2a2a2a] text-[#f9f9f9] transition hover:bg-[#333333] cursor-pointer">Podcast y programas</button>
         </div>
       </header>
       <div class="overflow-y-auto no-scrollbar">
         <div class="flex justify-between mb-3">
-            <button class="size-8 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#2A2A2A] hover:text-white">
+            <button class="size-8 rounded-full text-[#999999] grid place-items-center transition hover:bg-[#2A2A2A] hover:text-white cursor-pointer">
                 <ng-icon name="solarMagniferLinear" class=""/>
             </button>
-            <button class="flex gap-2 items-center text-[#999999] transition hover:scale-105 hover:text-[#f9f9f9]">
+            <button class="flex gap-2 items-center text-[#999999] transition hover:scale-105 hover:text-[#f9f9f9] cursor-pointer">
                 <span class="text-sm font-medium">Recientes</span>
                 <ng-icon name="solarList1Linear" class="text-xl"/>
             </button>
@@ -88,14 +88,123 @@
         </div>
       </div>
     </aside>
-    <main class="flex-1 rounded-lg bg-[#1F1F1F] overflow-y-auto no-scrollbar p-8">
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
-      <div class="h-68 w-68 bg-black">Soy una caja</div>
+    <main class="flex-1 rounded-lg bg-[#121212] overflow-y-auto no-scrollbar pt-4">
+      <div class="flex gap-2 mb-4 px-10">
+         <button class="px-3 py-1.5 rounded-full text-sm bg-white text-[#1f1f1f] cursor-pointer">Todo</button>
+         <button class="px-3 py-1.5 rounded-full text-sm bg-[#333333] text-[#f9f9f9] transition hover:bg-[#373737] cursor-pointer">Música</button>
+         <button class="px-3 py-1.5 rounded-full text-sm bg-[#333333] text-[#f9f9f9] transition hover:bg-[#373737] cursor-pointer">Podcasts</button>     
+      </div>
+      <section class="mt-9">
+        <div class="mb-4 flex justify-between items-center px-10">
+            <h2 class="text-2xl font-bold text-white hover:underline cursor-pointer">Tus playlists</h2>
+            <a href="#" class="text-sm font-medium text-[#999999] hover:underline">Mostrar todo</a>
+        </div>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar list-none pl-10">
+        @for (item of squareCards; track item.title) {
+          <li class="shrink-0 w-48">
+            <app-card
+              variant="square"
+              [title]="item.title"
+              [subtitle]="item.subtitle"
+              [imageUrl]="item.imageUrl"
+            />
+          </li>
+        }
+        </div>
+      </section>
+      <section class="mt-9">
+        <div class="mb-4 flex justify-between items-center px-10">
+            <h2 class="text-2xl font-bold text-white hover:underline cursor-pointer">Álbumes y sencillos populares</h2>
+            <a href="#" class="text-sm font-medium text-[#999999] hover:underline">Mostrar todo</a>
+        </div>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar list-none pl-10">
+        @for (item of squareCards; track item.title) {
+          <li class="shrink-0 w-48">
+            <app-card
+              variant="square"
+              [title]="item.title"
+              [subtitle]="item.subtitle"
+              [imageUrl]="item.imageUrl"
+            />
+          </li>
+        }
+        </div>
+      </section>
+      <section class="mt-9">
+        <div class="mb-4 flex justify-between items-center px-10">
+            <h2 class="text-2xl font-bold text-white hover:underline cursor-pointer">Artistas populares</h2>
+            <a href="#" class="text-sm font-medium text-[#999999] hover:underline">Mostrar todo</a>
+        </div>
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pl-10">
+       @for (item of circleCards; track item.title) {
+        <app-card class="shrink-0 w-48" 
+          variant="circle"
+          [title]="item.title"
+          [subtitle]="item.subtitle"
+          [imageUrl]="item.imageUrl"
+        />
+      }
+        </div>
+      </section>
+      <footer class="flex flex-col mt-27 px-10">
+        <hr class="border-[#333333]">
+        <div class="flex justify-between mt-16 mb-11">
+            <div class="flex text-[#999999] leading-7.5 gap-20">
+                <ul class="w-50">
+                    <h3 class="font-bold text-white">Compañía</h3>
+                    <li><a href="#" class="hover:underline">Acerca de</a></li>
+                    <li><a href="#" class="hover:underline">Empleo</a></li>
+                    <li><a href="#" class="hover:underline">For the Record</a></li>
+                </ul>
+                <ul class="w-50">
+                    <h3 class="font-bold text-white">Comunidades</h3>
+                    <li><a href="#" class="hover:underline">Para artistas</a></li>
+                    <li><a href="#" class="hover:underline">Desarrolladores</a></li>
+                    <li><a href="#" class="hover:underline">Publicidad</a></li>
+                    <li><a href="#" class="hover:underline">Inversionistas</a></li>
+                    <li><a href="#" class="hover:underline">Proveedores</a></li>
+                </ul>
+                <ul class="w-50">
+                    <h3 class="font-bold text-white">Enlaces útiles</h3>
+                    <li><a href="#" class="hover:underline">Ayuda</a></li>
+                    <li><a href="#" class="hover:underline">App móvil gratis</a></li>
+                    <li><a href="#" class="hover:underline">Contenido popular por país</a></li>
+                    <li><a href="#" class="hover:underline">Importar tu música</a></li>
+                </ul>
+                <ul class="w-50">
+                    <h3 class="font-bold text-white">Planes de Spotify</h3>
+                    <li><a href="#" class="hover:underline">Premium Individual</a></li>
+                    <li><a href="#" class="hover:underline">Premium Duo</a></li>
+                    <li><a href="#" class="hover:underline">Premium Familiar</a></li>
+                    <li><a href="#" class="hover:underline">Premium para Estudiantes</a></li>
+                    <li><a href="#" class="hover:underline">Versión gratuita</a></li>
+                </ul>
+            </div>
+            <div class="flex gap-4">
+                <button class="size-10 rounded-full text-white grid place-items-center bg-[#292929] transition hover:bg-[#757575] cursor-pointer">
+                        <ng-icon name="solarCameraMinimalisticLinear" class="text-xl" />
+                </button>
+                <button class="size-10 rounded-full text-white grid place-items-center bg-[#292929] transition hover:bg-[#757575] cursor-pointer">
+                        <ng-icon name="solarCatBold" class="text-xl" />
+                </button>
+                <button class="size-10 rounded-full text-white grid place-items-center bg-[#292929] transition hover:bg-[#757575] cursor-pointer">
+                        <ng-icon name="solarTextCircleBold" class="text-xl" />
+                </button>
+            </div>
+        </div>
+        <hr class="border-[#333333]">
+        <div class="flex justify-between my-11">
+            <ul class="flex gap-4 text-sm text-[#999999]">
+                <a href="#" class="transition hover:text-white">Legal</a>
+                <a href="#" class="transition hover:text-white">Centro de Seguridad y Privacidad</a>
+                <a href="#" class="transition hover:text-white">Política de Privacidad</a>
+                <a href="#" class="transition hover:text-white">Cookies</a>
+                <a href="#" class="transition hover:text-white">Sobre los anuncios</a>
+                <a href="#" class="transition hover:text-white">Accesibilidad</a>
+            </ul>
+            <span class="text-sm text-[#999999]">&copy; 2026 Spotify AB</span>
+        </div>
+      </footer>
     </main>
   </div>
   <footer class="fixed bottom-0 left-0 w-full h-[88px]"></footer>
