@@ -17,7 +17,7 @@ const IMAGE_CLASSES: Record<CardVariant, string> = {
 const TEXT_WRAPPER_CLASSES: Record<CardVariant, string> = {
   square: 'gap-1',
   circle: 'w-full items-center gap-1 text-center',
-  horizontal: 'min-w-0',
+  horizontal: '',
 };
 
 const TITLE_SIZE: Record<CardVariant, string> = {

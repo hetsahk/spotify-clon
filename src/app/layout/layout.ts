@@ -1,22 +1,21 @@
 import { Component } from '@angular/core';
-import { SpotifyLogo } from "../components/spotify-logo/spotify-logo";
+import { SpotifyLogo } from '../components/spotify-logo/spotify-logo';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { Card } from '../components/card/card';
+import { RangeSlider } from '../components/range-slider/range-slider';
 
-import { solarHomeBold,
-         solarCatBold,
-         solarTextCircleBold
-                     } from '@ng-icons/solar-icons/bold';
-import { solarRoundArrowDownLinear,
-         solarBellLinear,
-         solarMagniferLinear,
-         solarLibraryLinear,
-         solarUsersGroupTwoRoundedLinear,
-         solarAddCircleLinear,
-         solarMaximizeLinear,
-         solarList1Linear,
-         solarCameraMinimalisticLinear
-                     } from '@ng-icons/solar-icons/linear';
+import { solarHomeBold, solarCatBold, solarTextCircleBold } from '@ng-icons/solar-icons/bold';
+import {
+  solarRoundArrowDownLinear,
+  solarBellLinear,
+  solarMagniferLinear,
+  solarLibraryLinear,
+  solarUsersGroupTwoRoundedLinear,
+  solarAddCircleLinear,
+  solarMaximizeLinear,
+  solarList1Linear,
+  solarCameraMinimalisticLinear,
+} from '@ng-icons/solar-icons/linear';
 
 type CardData = {
   title: string;
@@ -24,14 +23,12 @@ type CardData = {
   imageUrl: string;
 };
 
-
-
 @Component({
   selector: 'app-layout',
-  imports: [SpotifyLogo, NgIcon, Card],
+  imports: [SpotifyLogo, NgIcon, Card, RangeSlider],
   viewProviders: [
-    provideIcons({ 
-      solarHomeBold, 
+    provideIcons({
+      solarHomeBold,
       solarRoundArrowDownLinear,
       solarBellLinear,
       solarMagniferLinear,
@@ -42,7 +39,8 @@ type CardData = {
       solarList1Linear,
       solarCameraMinimalisticLinear,
       solarCatBold,
-      solarTextCircleBold }),
+      solarTextCircleBold,
+    }),
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
