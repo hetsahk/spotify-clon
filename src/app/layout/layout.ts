@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { SpotifyLogo } from "../components/spotify-logo/spotify-logo";
+import { SpotifyLogo } from '../components/spotify-logo/spotify-logo';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { Card } from '../components/card/card';
+import { RangeSlider } from '../components/range-slider/range-slider';
 
 import { solarHomeBold,
          solarCatBold,
          solarTextCircleBold,
-         solarSkipNextBold,
          solarSkipPreviousBold,
-         solarPlayCircleBold
+         solarPlayCircleBold,
+         solarSkipNextBold
                      } from '@ng-icons/solar-icons/bold';
 import { solarRoundArrowDownLinear,
          solarBellLinear,
@@ -25,8 +26,8 @@ import { solarRoundArrowDownLinear,
          solarReorderLinear,
          solarDevicesLinear,
          solarVolumeLoudLinear,
-         solarFullScreenLinear,
-         solarQuitPIPLinear
+         solarQuitPIPLinear,
+         solarFullScreenLinear
                      } from '@ng-icons/solar-icons/linear';
 
 type CardData = {
@@ -35,14 +36,12 @@ type CardData = {
   imageUrl: string;
 };
 
-
-
 @Component({
   selector: 'app-layout',
   imports: [SpotifyLogo, NgIcon, Card],
   viewProviders: [
-    provideIcons({ 
-      solarHomeBold, 
+    provideIcons({
+      solarHomeBold,
       solarRoundArrowDownLinear,
       solarBellLinear,
       solarMagniferLinear,
@@ -55,16 +54,16 @@ type CardData = {
       solarCatBold,
       solarTextCircleBold,
       solarShuffleLinear,
-      solarSkipNextBold,
       solarSkipPreviousBold,
+      solarPlayCircleBold,
+      solarSkipNextBold,
       solarRepeatLinear,
       solarMicrophone2Linear,
       solarReorderLinear,
       solarDevicesLinear,
       solarVolumeLoudLinear,
-      solarFullScreenLinear,
       solarQuitPIPLinear,
-     solarPlayCircleBold 
+      solarFullScreenLinear
     }),
   ],
   templateUrl: './layout.html',
