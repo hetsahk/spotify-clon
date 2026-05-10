@@ -88,7 +88,7 @@
         </div>
       </div>
     </aside>
-    <main class="flex-1 rounded-lg bg-[#121212] overflow-y-auto no-scrollbar pt-4">
+    <main class=" flex-1 rounded-lg bg-[#121212] overflow-y-auto no-scrollbar pt-4">
       <div class="flex gap-2 mb-4 px-10">
          <button class="px-3 py-1.5 rounded-full text-sm bg-white text-[#1f1f1f] cursor-pointer">Todo</button>
          <button class="px-3 py-1.5 rounded-full text-sm bg-[#333333] text-[#f9f9f9] transition hover:bg-[#373737] cursor-pointer">Música</button>
@@ -207,5 +207,70 @@
       </footer>
     </main>
   </div>
-  <footer class="fixed bottom-0 left-0 w-full h-[88px]"></footer>
+  <footer class="fixed bottom-0 flex justify-between left-0 w-full h-[88px] p-4">
+    <div class="flex items-center gap-4">
+        <img src="https://images.unsplash.com/photo-1662037921055-5cf7fc1c4487?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+             class="size-14 rounded-sm cursor-pointer"/>
+        <div class="flex flex-col text-white" >
+            <span class="text-sm hover:underline cursor-pointer">This Charming Man - 2011 Remaster</span>
+            <span class="text-xs text-[#999999] hover:text-white hover:underline cursor-pointer">The Smiths</span>
+        </div>
+        <button class="text-[#999999] grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarAddCircleLinear" class="text-xl"/>
+        </button>
+    </div>
+    <div class="w-[672px] absolute left-[50%] -translate-x-1/2">
+        <div class="flex text-white justify-center gap-5">
+            <button class="text-[#333333] transition hover:text-[#B3B3B3] cursor-pointer">
+              <ng-icon name="solarShuffleLinear" class="text-xl"/>
+            </button>
+            <button class="text-[#B3B3B3] transition hover:text-white hover:scale-105 cursor-pointer">
+                <ng-icon name="solarSkipPreviousBold" class="text-xl"/>
+            </button>
+            <button class="transition hover:scale-105 cursor-pointer">
+                <ng-icon name="solarPlayCircleBold" class="text-[38px]"/>
+            </button>
+            <button class="text-[#B3B3B3] transition hover:text-white hover:scale-105 cursor-pointer">
+                <ng-icon name="solarSkipNextBold" class="text-xl"/>
+            </button>
+            <button class="text-[#333333] transition hover:text-[#B3B3B3] cursor-pointer">
+                <ng-icon name="solarRepeatLinear" class="text-xl"/>
+            </button>
+        </div>
+        <div class="flex group items-center gap-2 text-white text-xs font-light">
+            <span class="cursor-default">1:21</span>
+            <div class="flex relative h-1 w-full cursor-pointer">
+                <div class="w-1/2 rounded-l-full bg-white group-hover:bg-[#1CC558]"></div>
+                <div class="w-1/2 rounded-r-full bg-[#333333]"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-3 rounded-full bg-white opacity-0 group-hover:opacity-100"></div>
+            </div>
+            <span class="cursor-default">2:42</span>
+        </div>
+    </div>
+    <div class="flex items-center gap-3 text-[#999999] text-xl">
+        <button class="grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarMicrophone2Linear"/>
+        </button>
+        <button class="grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarReorderLinear"/>
+        </button>
+        <button class="grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarDevicesLinear"/>
+        </button>
+        <button class="flex group items-center gap-2 transition hover:text-white cursor-pointer">
+            <ng-icon name="solarVolumeLoudLinear"/>
+            <div class="relative flex h-1 w-24">
+                <div class="w-1/2 rounded-l-full bg-white transition group-hover:bg-[#1CC558]"></div>
+                <div class="w-1/2 rounded-r-full bg-[#333333]"></div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-3 rounded-full bg-white opacity-0 group-hover:opacity-100"></div>
+            </div>
+        </button>
+        <button class="grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarQuitPIPLinear"/>
+        </button>
+        <button class="grid place-items-center transition hover:text-white cursor-pointer">
+            <ng-icon name="solarFullScreenLinear"/>
+        </button>
+    </div>
+  </footer>
 </body>

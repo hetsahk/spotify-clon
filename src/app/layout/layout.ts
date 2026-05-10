@@ -5,7 +5,10 @@ import { Card } from '../components/card/card';
 
 import { solarHomeBold,
          solarCatBold,
-         solarTextCircleBold
+         solarTextCircleBold,
+         solarSkipNextBold,
+         solarSkipPreviousBold,
+         solarPlayCircleBold
                      } from '@ng-icons/solar-icons/bold';
 import { solarRoundArrowDownLinear,
          solarBellLinear,
@@ -15,7 +18,15 @@ import { solarRoundArrowDownLinear,
          solarAddCircleLinear,
          solarMaximizeLinear,
          solarList1Linear,
-         solarCameraMinimalisticLinear
+         solarCameraMinimalisticLinear,
+         solarShuffleLinear,
+         solarRepeatLinear,
+         solarMicrophone2Linear,
+         solarReorderLinear,
+         solarDevicesLinear,
+         solarVolumeLoudLinear,
+         solarFullScreenLinear,
+         solarQuitPIPLinear
                      } from '@ng-icons/solar-icons/linear';
 
 type CardData = {
@@ -42,7 +53,19 @@ type CardData = {
       solarList1Linear,
       solarCameraMinimalisticLinear,
       solarCatBold,
-      solarTextCircleBold }),
+      solarTextCircleBold,
+      solarShuffleLinear,
+      solarSkipNextBold,
+      solarSkipPreviousBold,
+      solarRepeatLinear,
+      solarMicrophone2Linear,
+      solarReorderLinear,
+      solarDevicesLinear,
+      solarVolumeLoudLinear,
+      solarFullScreenLinear,
+      solarQuitPIPLinear,
+     solarPlayCircleBold 
+    }),
   ],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
